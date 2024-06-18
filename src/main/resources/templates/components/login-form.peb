@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/static/css/login-form.css">
+{% block custom_styles %}{% endblock %}
+<a href="/main" class="backlink">Назад на главную</a>
+<form class="account-form" id="login" action="/accounts/login" method="post">
+    <h1>{% block title %}Вход{% endblock %}</h1>
+    <label for="email">
+        <span id="label">Email</span>
+        <span id="email-error"></span>
+        <input name="email"
+               id="email"
+               type="email"
+               aria-describedby="email-error"
+               aria-invalid="false"
+               required>
+    </label>
+    <label for="password">
+        <span id="label">Пароль<a href="/accounts/reset-password">Забыли<span class="hideonmobile"> пароль</span>?</a></span>
+        <span id="password-error"></span>
+        <input name="password"
+               id="password"
+               type="password"
+               aria-describedby="password-error"
+               aria-invalid="false"
+               required>
+    </label>
+    <input type="submit" class="button" value="Войти">
+    <a href="/accounts/reg">Создать новый аккаунт</a>
+    </form>

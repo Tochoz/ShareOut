@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/static/css/core.css">
+<ul>
+    {% for component in components %}
+        <li>
+            <a href="components/{{ component }}">{{ component }}</a>
+        </li>
+    {% endfor %}
+    <br>
+    <li>
+        <a href="/demo">demopage</a>
+    </li>
+</ul>

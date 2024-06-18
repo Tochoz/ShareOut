@@ -1,0 +1,10 @@
+ktor:
+  application:
+    modules:
+      - ru.ApplicationKt.module
+  deployment:
+    watch:
+      - classes
+      - resources
+    port: 8080
+  development: true

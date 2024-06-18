@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="/static/css/core.css">
+<script>
+    document.addEventListener("keydown", (event) => {
+        if (event.isComposing || event.keyCode === 27) {
+            window.location.href = '/components';
+        }
+    });
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include "components/"+component+".peb" %}

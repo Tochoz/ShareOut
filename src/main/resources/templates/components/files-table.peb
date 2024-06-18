@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="/static/css/files-table.css">
+{% block custom_styles %}{% endblock %}
+<section class="content-table">
+    <table>
+        {% for file in files %}
+            <tr id="{{ file.id }}">
+                <td class="name">{{ file.name }}</td>
+                <td class="content">{{ file.content}}</td>
+                <td class="size">{{ file.size }}</td>
+                <td class="date">{{ file.date }}</td>
+                <td class="icons">
+                    <button onclick="addtofavourites({{ file.id }})"><img src="/static/icons/tablestar.svg" alt="Добавить в избранное"></button>
+                    <button onclick="downloadfile({{ file.id }})"><img src="/static/icons/download.svg" alt="Скачать файл"></button>
+                    <button onclick="deletefile({{ file.id }})"><img src="/static/icons/trash.svg" alt="Удалить файл из хранилища"></button>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</section>

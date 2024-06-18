@@ -1,0 +1,6 @@
+<link rel="stylesheet" href="/static/css/title-text.css">
+{% block custom_styles %}{% endblock %}
+<section class="title-text">
+    <h2>{% block title %}Component title{% endblock %}</h2>
+    <p>{% block text %}Component text{% endblock %}</p>
+</section>

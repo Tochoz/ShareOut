@@ -1,0 +1,36 @@
+section.welcome-screen{
+    height: 430px;
+    margin-top: 80px;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+    padding-top: 140px;
+    background-image: url("/static/icons/welcomescreen.svg");
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    background-clip: border-box;
+    background-position: right bottom;
+}
+section.welcome-screen>h1{
+    color: var(--white-color);
+    display: block;
+    font-family: LogoFont, sans-serif;
+    font-size: 130px;
+    width: 100%;
+    line-height: 1em;
+    margin: auto 0;
+}
+
+@media (max-width: 1100px){
+
+}
+@media (max-width: 500px){
+    section.welcome-screen {
+        height: 280px;
+        padding-bottom: 90px;
+        padding-top: 140px;
+        background-size: 180px 180px;
+    }
+    section.welcome-screen>h1{
+        font-size: 57px;
+    }
+}

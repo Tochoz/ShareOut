@@ -1,0 +1,83 @@
+section.accordion{
+    width: 100%;
+    margin-bottom: 140px;
+    padding: 32px 56px 56px 56px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: var(--dark-color);
+}
+section.accordion h2{
+    margin-bottom: 24px;
+}
+
+section.accordion .items{
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+
+section.accordion details{
+    display: block;
+    padding: 0 24px;
+
+    border: var(--light-color-trans) solid 2px;
+    border-radius: 20px;
+}
+
+section.accordion details[open]{
+    padding-bottom: 32px;
+}
+
+/*section.accordion summary::-webkit-details-marker {*/
+/*    display:none;*/
+/*}*/
+section.accordion details summary::marker{
+    display: none;
+}
+section.accordion details summary{
+    list-style: none;
+    padding: 16px 0;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    cursor: pointer;
+
+}
+section.accordion details summary img{
+    transition: all 0.2s;
+    height: 1em;
+    margin-left: auto;
+
+}
+
+section.accordion details[open] summary{
+    margin-bottom: 16px;
+    border-bottom: var(--light-color-trans) 2px solid;
+}
+
+section.accordion details[open] summary img{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+@media (max-width: 1100px){
+    section.accordion{
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+@media (max-width: 500px){
+    section.accordion {
+        margin-bottom: 100px;
+        margin-left: -24px;
+        margin-right: -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        box-sizing: content-box;
+        border-radius: 0;
+    }
+}

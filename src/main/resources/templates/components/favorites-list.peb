@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/static/css/favorites-list.css">
+{% block custom_styles %}{% endblock %}
+<section class="favorites-list">
+    <h2>Список избранного</h2>
+    <p>Здесь появятся отмеченные вами ссылки и файлы. Нажмите на элемент чтобы перейти к отправке</p>
+    <section class="horizontal">
+        {% if favorites.links!=null %}
+        <div class="links">
+            <h3>Ссылки</h3>
+            {% for link in favorites.links %}
+                <a href="/?type=link&id={{ link.id }}">
+                    <p class="name">{{ link.name }}</p>
+                    <p class="date">{{ link.date }}</p>
+                </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if favorites.files!=null %}
+        <div class="files">
+            <h3>Файлы</h3>
+            {% for file in favorites.files %}
+                <a href="/?type=link&id={{ file.id }}">
+                    <p class="name">{{ file.name }}</p>
+                    <p class="date">{{ file.date }}</p>
+                </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </section>
+</section>

@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="/static/css/text-photo.css">
+{% block custom_styles %}{% endblock %}
+<section class="text-photo">
+    <section class="content">
+        <h2>{% block title %}Component title{% endblock %}</h2>
+        <p>{% block text %}Component text{% endblock %}</p>
+    </section>
+    <img src="{% block imgsrc %}/static/img/placeholder.svg{% endblock %}" alt="{% block imgalt %}Share Out по сравнению с другими{% endblock %}">
+</section>

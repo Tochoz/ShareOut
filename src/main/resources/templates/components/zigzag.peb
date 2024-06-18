@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/static/css/zigzag.css">
+{% block custom_styles %}{% endblock %}
+<section class="zigzag">
+    <h2>{% block title %}Component title{% endblock %}</h2>
+    <section class="first">
+        <section class="content">
+            <h3>{% block firsttitle %}Component title{% endblock %}</h3>
+            <p>{% block firsttext %}Component text{% endblock %}</p>
+        </section>
+        <img src="{% block firstimgsrc %}/static/img/posting.svg{% endblock %}" alt="{% block secondimgalt %}Share Out по сравнению с другими{% endblock %}">
+    </section>
+    <section class="second">
+        <section class="content">
+            <h3>{% block secondtitle %}Component title{% endblock %}</h3>
+            <p>{% block secondtext %}Component text{% endblock %}</p>
+        </section>
+        <img src="{% block secondimgsrc %}/static/img/getting.svg{% endblock %}" alt="{% block secondimgalt %}Share Out по сравнению с другими{% endblock %}">
+    </section>
+</section>

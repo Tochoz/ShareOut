@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/static/css/three-tiles.css">
+{% block custom_styles %}{% endblock %}
+<section id="{{ id }}" class="three-tiles">
+    <h2>{% block title %}Component title{% endblock %}</h2>
+    <section class="tiles">
+        <div class="tile">
+            <img src="{{ firstimgsrc }}" alt="Фото 1 плитки">
+            <div class="content">
+                <h3>{% block firsttitle %}Tile title{% endblock %}</h3>
+                <p>{% block firsttext %}Component text{% endblock %}</p>
+                {% if haslinks %}
+                    <a href="{{ firsthref }}">{{ firstlinktext }}</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="tile">
+            <img src="{{ secondimgsrc }}" alt="Фото 2 плитки">
+            <div class="content">
+            <h3>{% block secondtitle %}Tile title{% endblock %}</h3>
+            <p>{% block secondtext %}Component text{% endblock %}</p>
+            {% if haslinks %}
+                <a href="{{ secondhref }}">{{ secondlinktext }}</a>
+            {% endif %}
+            </div>
+        </div>
+        <div class="tile">
+            <img src="{{ thirdimgsrc }}" alt="Фото 3 плитки">
+            <div class="content">
+            <h3>{% block thirdtitle %}Tile title{% endblock %}</h3>
+            <p>{% block thirdtext %}Component text{% endblock %}</p>
+            {% if haslinks %}
+                <a href="{{ thirdhref }}">{{ thirdlinktext }}</a>
+            {% endif %}
+            </div>
+        </div>
+    </section>
+</section>

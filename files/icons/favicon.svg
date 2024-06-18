@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256"><svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_642_457)">
+<circle cx="256" cy="256" r="246" transform="rotate(90 256 256)" stroke="#F6B17A" stroke-width="20"></circle>
+<circle cx="256" cy="256" r="171.525" transform="rotate(90 256 256)" stroke="#F6B17A" stroke-width="20"></circle>
+<circle cx="255.999" cy="256" r="49.5043" transform="rotate(90 255.999 256)" stroke="#F6B17A" stroke-width="20"></circle>
+<circle cx="255.999" cy="256" r="108.33" transform="rotate(90 255.999 256)" stroke="#F6B17A" stroke-width="20"></circle>
+</g>
+<defs>
+<clipPath id="SvgjsClipPath1000">
+<rect width="256" height="256" fill="white" transform="translate(256) rotate(90)"></rect>
+</clipPath>
+</defs>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>

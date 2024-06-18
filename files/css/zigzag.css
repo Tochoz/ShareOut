@@ -1,0 +1,50 @@
+section.zigzag{
+    width: 100%;
+    margin-bottom: 140px;
+}
+
+section.zigzag>section{
+    display: flex;
+    gap: 30px;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 40px;
+}
+section.zigzag>section.second{
+    flex-direction: row-reverse;
+}
+section.zigzag .content{
+    flex: 1;
+}
+section.zigzag img{
+    display: block;
+    flex: 1;
+    width: 45%;
+    height: 100%;
+    object-fit: contain;
+}
+section.zigzag p{
+    margin-bottom: 0;
+}
+
+@media (max-width: 800px){
+    section.zigzag>section.first, section.zigzag>section.second{
+
+        flex-direction: column;
+        gap: 16px;
+
+    }
+    section.zigzag {
+        margin-bottom: 100px;
+    }
+    section.zigzag img{
+        width: 100%;
+    }
+}
+@media (max-width: 500px){
+    section.zigzag img{
+        width: calc(100vw - var(--sb-size) - 1px);
+        /*box-sizing: content-box;*/
+        margin: 0 -24px;
+    }
+}

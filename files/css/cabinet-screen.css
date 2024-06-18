@@ -1,0 +1,77 @@
+section.cabinet-screen .horizontal{
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    justify-content: space-between;
+    gap: 40px;
+}
+section.cabinet-screen .buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+section.cabinet-screen section.quote{
+    width: 70%;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+section.cabinet-screen section.quote .border{
+    box-sizing: border-box;
+    margin-top: 8px;
+    height: 1em;
+    width: 100%;
+    border: solid 1px var(--accent-color);
+    border-radius: 0.5em;
+    background-color: var(--dark-color);
+    overflow: clip;
+}
+section.cabinet-screen section.quote .fill{
+    background-color: var(--accent-color);
+    height: calc(1em - 2px);
+}
+section.cabinet-screen .horizontal-links{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 56px;
+}
+section.cabinet-screen a{
+    display: block;
+    flex: 1;
+    padding-left: 32px;
+    background-image: url("/static/icons/star.svg");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 0 50%;
+    overflow: visible;
+}
+section.cabinet-screen button.outlined{
+    height: 40px;
+    width: 200px;
+}
+section.cabinet-screen button.filled{
+    width: 70%;
+    max-width: 600px;
+    height: 48px;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 1100px){
+
+}
+
+@media (max-width: 600px){
+    section.cabinet-screen .horizontal-links{
+        flex-direction: column;
+        gap: 0.7em;
+    }
+    section.cabinet-screen section.quote,
+    section.cabinet-screen button.filled{
+        width: 110%;
+        margin-left: -5%;
+        margin-right: -5%;
+    }
+    section.cabinet-screen #desktop{
+        display: none;
+    }
+
+}

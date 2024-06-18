@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/static/css/cabinet-screen.css">
+{% block custom_styles %}{% endblock %}
+<section class="cabinet-screen">
+    <div class="horizontal">
+        <h1>Личный кабинет</h1>
+
+        <div id="desktop" class="buttons">
+            <button class="outlined" onclick="location.href='/accounts/password-reset'">Сменить пароль</button>
+            <button class="outlined" onclick="location.href='/accounts/logout'">Выйти</button>
+        </div>
+    </div>
+    <button class="filled" onclick="location.href='/'">Отправить или получить</button>
+
+    <section class="quote">
+        Использовано {{ user.used==null ? 1 : user.used }} МБ из 100 МБ
+        <div class="border">
+            <div class="fill" style="width: {{ user.used==null ? 1 : user.persent }}%"></div>
+        </div>
+    </section>
+    <div class="horizontal-links">
+        <a href="/profile/texts">Список всех ссылок</a>
+        <a href="/profile/files">Список всех файлов</a>
+    </div>
+</section>

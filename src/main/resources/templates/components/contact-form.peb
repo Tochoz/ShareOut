@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/static/css/contact-form.css">
+{% block custom_styles %}{% endblock %}
+<section class="contact-form">
+    <h2>{% block title %}Вы организация?{% endblock %}</h2>
+    <p>
+        Укажите данные для связи и опишите свою оганизацию, после проверки с вами свяжутся для дальнейшего создания аккаунта.
+    </p>
+        <form action="/api/organisation-contact" method="post">
+        <div class="horizontal">
+            <fieldset>
+            <label for="email">
+                <span id="label">Email для связи</span>
+                <span id="email-error"></span>
+                <input name="email"
+                       id="email"
+                       type="email"
+                       aria-describedby="email-error"
+                       aria-invalid="false"
+                       required>
+            </label>
+            <label for="details">
+                <span id="label" >Описание организации</span>
+                <textarea
+                        name="details"
+                        id="details"
+                        required></textarea>
+            </label>
+            </fieldset>
+            <input type="submit" class="button" value="Отправить">
+        </div>
+        </form>
+</section>

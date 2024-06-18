@@ -1,0 +1,9 @@
+{% extends "components/base.peb" %}
+{% block content %}
+    {% embed "components/cabinet-screen.peb" %}
+    {% endembed %}
+    {% embed "components/favorites-list.peb" %}
+    {% endembed %}
+    {% embed "components/mobile-profile-controls.peb" %}
+    {% endembed %}
+{% endblock %}

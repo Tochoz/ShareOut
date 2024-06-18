@@ -1,0 +1,97 @@
+{% extends "components/base.peb" %}
+{% block content %}
+    {% embed "components/welcome-screen.peb" %}
+    {% block pageheader %}
+    Share Out
+    {% endblock %}
+    {% endembed %}
+
+    {% embed "components/title-text.peb" %}
+    {% block title %}
+    Что это такое?
+    {% endblock %}
+    {% block text %}
+    Данный сервис позволяет передавать через себя текстовые материалы например ссылки, а также передавать файлы. При отправке генерируется  короткий код, чтобы получить содержимое на другом компьютере достаточно открыть сервис и ввести данный код.        {% endblock %}
+    {% endembed %}
+
+    {% embed "components/zigzag.peb" %}
+    {% block title %}
+    Как это работает?
+    {% endblock %}
+    {% block firsttitle %}
+    Отправка контента
+    {% endblock %}
+    {% block firsttext %}
+    Перейдите на страницу отправки. Выберите тип контента — текстовый или файл. Вставьте свой контент или загрузите файл. Нажмите на кнопку сгенерировать код. Вы получите короткий код, который можно будет ввести на сайте с другого устройства и получить ваше содержимое.
+    {% endblock %}
+    {% block secondtitle %}
+    Получение контента
+    {% endblock %}
+    {% block secondtext %}
+    Если у вас есть код для получения контента, то перейдите на страницу получения контента. Введите код в поле ввода кода и, если код ещё действителен, то вам отобразится ссылка или файл, который был опубликован по данному коду.
+    {% endblock %}
+    {% endembed %}
+
+
+
+    {% embed "components/three-tiles.peb" with
+    {'haslinks': true,
+    "firstimgsrc": "/static/img/flashusage.svg", 'firsthref': "/", "firstlinktext":"Перейти к функционалу",
+    "secondimgsrc": "/static/img/userusage.svg", 'secondhref': "/accounts/reg", "secondlinktext":"Создать аккаунт",
+    "thirdimgsrc": "/static/img/companyusage.svg", 'thirdhref': "#company", "thirdlinktext":"Узнать о возможностях"
+    }%}
+    {% block title %}
+    Варианты использования
+    {% endblock %}
+    {% block firsttitle %}Без аккаунта{% endblock %}
+    {% block firsttext %}Не имея аккаунта можно свободно пользоваться получением и отправкой. Коды будут гене<wbr>риро<wbr>ваться всегда на 2 минуты. Размер файлов огра<wbr>ничен до 5мб.{% endblock %}
+    {% block secondtitle %}С аккаунтом{% endblock %}
+    {% block secondtext %}Создав аккаунт появится возмож<wbr>ность выбирать дли<wbr>тель<wbr>ность действия кода до 5 минут, история отправок и список избран<wbr>ного. А так же квота хра<wbr>нимых файлов до 100мб.{% endblock %}
+    {% block thirdtitle %}Как организация{% endblock %}
+    {% block thirdtext %}Если вы предс<wbr>тавитель органи<wbr>зации, то есть возмож<wbr>ность создать аккаунт органи<wbr>зации с дополни<wbr>тельными возмож<wbr>ностями.{% endblock %}
+    {% endembed %}
+
+    {% embed "components/text-photo.peb" %}
+    {% block imgsrc %}
+    /static/img/podium.svg
+    {% endblock %}
+    {% block title %}
+    Чем Share Out лучше?
+    {% endblock %}
+    {% block text %}
+    Если вам необходимо передать большую ссылку или файл на чужой компьютер. Преимущество данного сервиса перед другими способами в скорости и отсутствии необходимости входа в аккаунт. Gmail/Telegram требуют входа и в последствии выхода на компьютере, тогда как здесь вы просто генерируете код у себя и заходите с чужого компьютера на сайт, чтобы получить содержимое.
+    {% endblock %}
+    {% endembed %}
+
+    {% embed "components/three-tiles.peb" with
+    {'haslinks': false,
+    "id":"company",
+    "firstimgsrc": "/static/img/company1.svg",
+    "secondimgsrc": "/static/img/company2.svg",
+    "thirdimgsrc": "/static/img/company3.svg"
+    }%}
+    {% block title %}
+    В чём преимущества организации?
+    {% endblock %}
+    {% block firsttitle %}Без ограничений{% endblock %}
+    {% block firsttext %}Для ссылок и файлов компании нет ограничений по времени действия кода и размеру передаваемых файлов.{% endblock %}
+    {% block secondtitle %}Сотрудники{% endblock %}
+    {% block secondtext %}
+    У вас будет инвайт код, который сотрудники будут вводить при создании аккаунта. У всех сотрудников будет список закреплённого контента организации, наравне со списком избранных или ссылок.    {% endblock %}
+    {% block thirdtitle %}Кастомные коды{% endblock %}
+    {% block thirdtext %}
+    При создании аккаунта вы можете выбрать шаблон в соответствии с которым будут генерироваться все коды организации.    {% endblock %}
+    {% endembed %}
+
+    {% embed "components/contact-form.peb" %}
+    {% endembed %}
+
+    {% embed "components/accordion.peb" %}
+    {% block title %}
+    Часто задаваемые вопросы
+    {% endblock %}
+    {% endembed %}
+
+
+
+    {% endblock %}

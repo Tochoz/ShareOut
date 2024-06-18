@@ -1,0 +1,47 @@
+{% extends "components/base.peb" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/css/deliver.css">
+<script src="/static/js/deliver.js"></script>
+{% if user.is_authenticated %}
+    <a href="/profile" style="margin-left: 0" class="backlink">В личный кабинет</a>
+{% else %}
+    <a href="/main" style="margin-left: 0" class="backlink">Назад на главную</a>
+{% endif %}
+
+<section class="controls">
+    <div class="get">
+    <button id="send" class="outlined" onclick="controlSwitch('send')">Отправить</button>
+        <div class="what">
+            <button id="textbtn" class="outlined" onclick="controlSwitch('text')">Текст</button>
+            <button id="filebtn" class="outlined" onclick="controlSwitch('file')">Файл</button>
+        </div>
+    </div>
+    <button id="get" class="outlined" onclick="controlSwitch('get')">Получить</button>
+</section>
+
+<section class="get">
+    <div class="form">
+        <label class="code" for="code">
+            <span id="label" >Код получения</span>
+            <input maxlength="6" name="code" class="code" id="code" type="text" placeholder="G35J11">
+        </label>
+        <button class="filled">Получить по коду</button>
+    </div>
+    <label id="textout" for="text">
+        <span id="label" >Полученный текст</span>
+        <textarea
+                name="text"
+                id="text"></textarea>
+    </label>
+    <div id="filearea">
+    <label for="text">
+        <span id="label" >Полученный файл</span>
+        <input
+                name="file"
+                id="text">
+    </label>
+        <button class="outlined">Скачать</button>
+    </div>
+</section>
+{% endblock %}

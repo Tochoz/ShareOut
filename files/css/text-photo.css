@@ -1,0 +1,40 @@
+section.text-photo{
+    display: flex;
+    gap: 30px;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 140px;
+}
+section.text-photo .content{
+    flex: 1;
+    flex-basis: 50%;
+    /*padding-right: 3em;*/
+}
+section.text-photo img{
+    flex: 1;
+    display: block;
+    width: 40%;
+    height: fit-content;
+    object-fit: contain;
+    flex-basis: 40%;
+}
+
+
+@media (max-width: 800px) {
+    section.text-photo {
+        margin-bottom: 100px;
+        flex-direction: column;
+        gap: 16px;
+    }
+    section.text-photo img{
+        width: 100%;
+    }
+}
+@media (max-width: 500px){
+    section.text-photo img{
+        width: calc(100vw - var(--sb-size) - 1px);
+        /*box-sizing: content-box;*/
+        margin: 0 -24px;
+
+    }
+}

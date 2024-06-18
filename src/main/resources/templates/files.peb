@@ -1,0 +1,15 @@
+{% extends "components/base.peb" %}
+
+{% block content %}
+{% embed "components/page-title.peb" %}
+{% block pageheader %}
+    Все недавние файлы
+{% endblock %}
+{% endembed %}
+<a href="/profile" class="backlink">Назад в личный кабинет</a>
+{% embed "components/files-table.peb" %}
+    {% block title %}
+    Все недавние файлы
+    {% endblock %}
+    {% endembed %}
+{% endblock %}

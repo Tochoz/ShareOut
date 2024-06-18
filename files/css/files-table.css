@@ -1,0 +1,119 @@
+section.content-table table{
+    border-spacing: 0;
+    margin-top: 8px;
+    width: 100%;
+}
+section.content-table{}
+section.content-table button{
+    padding: 0;
+    margin: 0;
+    border: none;
+    /*display: block;*/
+    background: none;
+}
+section.content-table tr{
+    width: 100%;
+    margin-bottom: 16px;
+    height: 50px;
+    padding: 13px 24px;
+    background-color: var(--dark-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -24px;
+}
+section.content-table td{
+    width: 10%;
+    padding: 0 .5em;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 500;
+    color: inherit;
+    text-align: center;
+    flex: 1 1 16.6%;
+}
+section.content-table td.name{
+    flex: 1 1 24.8%;
+}
+section.content-table td.content,
+section.content-table td.name{
+    width: 15%;
+    text-align: start;
+    height: fit-content;
+    max-height: 2.2em;
+    text-overflow: clip;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: clip;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+section.content-table td.content{
+    opacity: 50%;
+}
+
+section.content-table td.icons{
+    flex: 0 0 115px;
+    display: flex;
+    height: 28px;
+    width: 80px;
+    justify-content: end;
+    gap: 12px;
+    margin-left: auto;
+}
+
+section.content-table td.icons img{
+    height: 80%;
+    cursor: pointer;
+}
+
+section.content-table td.icons img:hover{
+    color: var(--light-color);
+}
+
+@media (max-width: 900px){
+    section.content-table tr{
+        flex-wrap: wrap;
+        row-gap: 16px;
+        height: fit-content;
+        padding: 24px;
+    }
+
+    section.content-table td{
+        text-align: start;
+    }
+
+    section.content-table td.content,
+    section.content-table td.name{
+        height: 2.5em;
+        width: 40%;
+        flex: 1 1 45.8%;
+    }
+}
+
+@media (max-width: 500px){
+    section.content-table tr{
+        border-radius: 0;
+    }
+    section.content-table td.name{
+        flex: 1 1 80%;
+    }
+
+    section.content-table td.date,
+    section.content-table td.size{
+        font-size: 14px;
+    }
+
+    section.content-table td.content
+    {
+        display: none;
+    }
+
+    section.content-table td.icons{
+        flex: 0 0 90px;
+        padding: 0;
+    }
+}

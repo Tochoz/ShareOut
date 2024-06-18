@@ -1,0 +1,5 @@
+<link rel="stylesheet" href="/static/css/welcome-screen.css">
+{% block custom_styles %}{% endblock %}
+<section class="welcome-screen">
+    <h1>{% block header1 %} Share Out {% endblock %}</h1>
+</section>

@@ -1,0 +1,13 @@
+{% extends "components/base.peb" %}
+
+{% block content %}
+{% embed "components/page-title.peb" %}
+{% block pageheader %}
+    Все недавние ссылки
+{% endblock %}
+{% endembed %}
+<a href="/profile" class="backlink" >Назад в личный кабинет</a>
+{% embed "components/links-table.peb" %}
+
+    {% endembed %}
+{% endblock %}

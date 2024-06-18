@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/static/css/header.css">
+{% block custom_styles %}{% endblock %}
+<header>
+    <nav>
+        <a href="/main" ><img class="logo" src="/static/icons/logo.svg" alt="Вернуться на главную"></a>
+        <div class="desktop">
+        <form  class="header" action="/" method="post">
+            <input type="text" id="content" placeholder="Введите ваш текст">
+            <label class="submit">
+                <input type="submit" name="image">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="38" height="38" rx="19" fill="#F6B17A"/>
+                    <path d="M15.4965 28.8571C15.9375 29.298 16.6523 29.298 17.0933 28.8571L24.5948 21.3554C25.9172 20.0331 25.9176 17.8893 24.5958 16.5664L17.1778 9.14278C16.737 8.70179 16.0221 8.70179 15.5812 9.14278C15.1403 9.58366 15.1403 10.2985 15.5812 10.7394L23.0011 18.1592C23.442 18.6002 23.442 19.315 23.0011 19.7559L15.4965 27.2604C15.0556 27.7013 15.0556 28.4162 15.4965 28.8571Z" fill="#2D3250"/>
+                </svg>
+            </label>
+        </form>
+            {% if user.is_authenticated %}
+                <a href="/profile" ><img class="profile" src="/static/icons/profile.svg" alt="Войти в личный кабинет"></a>
+            {% else %}
+                <button class="outlined" onclick="location.href='/accounts/login'">Вход</button>
+            {% endif %}
+        </div>
+        <details>
+            <summary>
+                <img src="/static/icons/burger.svg" alt="Меню">
+            </summary>
+            <div class="content">
+                <ul class="undecorated">
+                    <li>
+                        <form  class="header" action="/delivery" method="post">
+                            <input type="text" id="content" placeholder="Введите код или текст">
+                            <label class="submit">
+                                <input type="submit" name="image">
+                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="38" height="38" rx="19" fill="#F6B17A"/>
+                                    <path d="M15.4965 28.8571C15.9375 29.298 16.6523 29.298 17.0933 28.8571L24.5948 21.3554C25.9172 20.0331 25.9176 17.8893 24.5958 16.5664L17.1778 9.14278C16.737 8.70179 16.0221 8.70179 15.5812 9.14278C15.1403 9.58366 15.1403 10.2985 15.5812 10.7394L23.0011 18.1592C23.442 18.6002 23.442 19.315 23.0011 19.7559L15.4965 27.2604C15.0556 27.7013 15.0556 28.4162 15.4965 28.8571Z" fill="#2D3250"/>
+                                </svg>
+                            </label>
+                        </form>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <button class="outlined" onclick="location.href='/profile'" type="button">Личный кабинет</button>
+                        </li>
+                    {% else %}
+                        <li>
+                            <button class="outlined" onclick="location.href='/accounts/login'" type="button">Вход</button>
+                        </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </details>
+    </nav>
+</header>

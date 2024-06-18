@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/static/css/reg-form.css">
+{% block custom_styles %}{% endblock %}
+<a href="/main" class="backlink">Назад на главную</a>
+<form class="account-form" id="reg" action="/accounts/reg" method="post">
+    <h1>{% block title %}Регистрация{% endblock %}</h1>
+    <label for="email">
+        <span id="label">Email</span>
+        <span id="email-error"></span>
+        <input name="email"
+               id="email"
+               type="email"
+               aria-describedby="email-error"
+               aria-invalid="false"
+               required>
+    </label>
+    <fieldset>
+    <label for="password">
+        <span id="label">Пароль</span>
+        <span id="password-error"></span>
+        <input name="password"
+               id="password"
+               type="password"
+               aria-describedby="password-error"
+               aria-invalid="false"
+               required>
+    </label>
+    <label for="passwordrepeat">
+        <span id="label">Повтор пароля</span>
+        <span id="passwordrepeat-error"></span>
+        <input name="passwordrepeat"
+               id="passwordrepeat"
+               type="password"
+               aria-describedby="passwordrepeat-error"
+               aria-invalid="false"
+               required>
+    </label>
+    </fieldset>
+    <label for="orgcode">
+        <span id="label"><span>Код <span class="hideonmobile">организации </span>(если есть)</span></span>
+        <span id="orgcode-error"></span>
+        <input name="orgcode"
+               id="orgcode"
+               type="orgcode"
+               autocomplete="false"
+        >
+    </label>
+    <input type="submit" class="button" value="Зарегистрироваться">
+    <a href="accounts/login">Уже есть аккаунт?</a>
+</form>

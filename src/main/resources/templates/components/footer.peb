@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/static/css/footer.css">
+{% block custom_styles %}{% endblock %}
+<footer>
+    <div class="content">
+        <h3>Developed by @tochoz</h3>
+        <ul class="undecorated links">
+            <li>
+            <a href="https://t.me/tochoz" target="_blank"><img src="/static/icons/tg.svg"></a>
+            </li>
+            <li>
+            <a href="mailto:sergey.pugach02@gmail.com" target="_blank"><img src="/static/icons/mail.svg"></a>
+            </li>
+            <li>
+            <a href="https://github.com/Tochoz" target="_blank"><img src="/static/icons/github.svg"></a>
+            </li>
+        </ul>
+    </div>
+</footer>

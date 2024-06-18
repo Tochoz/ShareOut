@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/static/css/accordion.css">
+{% block custom_styles %}{% endblock %}
+<section class="accordion">
+    <h2>{% block title %}Component title{% endblock %}</h2>
+    <div class="items">
+        {% for item in items %}
+            <details>
+                <summary>
+                        {{ item.title }}
+                    <img src="/static/icons/arrow.svg">
+                </summary>
+                {{ item.description }}
+            </details>
+        {% endfor %}
+    </div>
+</section>
