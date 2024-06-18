@@ -95,6 +95,8 @@ fun Application.configureComponentsWatch() {
             print(content)
             if (content!="")
                 call.respondRedirect("/?content=$content")
+            else
+                call.respondRedirect("/")
         }
 
         get("/profile"){
