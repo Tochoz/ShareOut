@@ -24,26 +24,38 @@ section.controls .what{
 section.controls div.get>*{
     width: 100%;
 }
+
 section.controls div.get{
     height: fit-content;
 }
+
 section.controls button{
     height: 40px;
 }
 
-section.controls button.checked{
+section.controls button.checked,
+section.send button.checked{
     font-weight: 600;
-    border: none;
+    border: solid var(--accent-color) 2px;
     background-color: var(--accent-color);
     color: var(--dark-color);
     padding: 0;
+}
+section.controls button.checked:hover,
+section.send button.checked:focus{
+    border: solid var(--accent-color-hover) 2px;
+    background-color: var(--accent-color-hover);
 }
 
 /*section.controls{*/
 /*    height: 40px;*/
 /*}*/
-
+section.get{
+    display: none;
+    flex-direction: column;
+}
 section.get .form{
+    width: 100%;
     display: flex;
     margin-bottom: 40px;
     gap: 30px;
@@ -57,6 +69,9 @@ section.get textarea{
     height: 200px;
     resize: none;
 }
+section.send textarea{
+    resize: none;
+}
 label.code span#label {
     text-align: center;
     width: 100%;
@@ -64,7 +79,7 @@ label.code span#label {
     padding: 0;
     color: var(--light-color)
 }
-label.code input#code{
+section.get label.code input.code{
     height: 150px;
     color: var(--accent-color);
     font-weight: 800;
@@ -73,7 +88,7 @@ label.code input#code{
     text-align: center;
     padding: 0;
 }
-label.code input#code::placeholder{
+label.code input.code::placeholder{
     color: var(--light-color-trans);
 }
 
@@ -91,9 +106,179 @@ section.get #filearea button{
     width: 10em;
     height: 50px;
 }
+section.send .filearea{
+    display: none;
+}
+section.send label#textin,
+section.send label.filearea{
+    /*Попытки чтобы они были одной высоты*/
+}
+section.send{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+section.send .droparea {
+    width: 100%;
+    position: relative;
+}
+section.send .droparea .default{
+    display: inline-block;
+}
+section.send .droparea .success{
+    display: none;
+}
 
-label.code {
+section.send .file-dummy {
+    padding: 30px;
+    border: dashed var(--light-color-trans) 4px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin-top: 8px;
+}
 
+section.send input[type=file]:valid + .file-dummy{
+    border-color: var(--accent-color);
+}
+
+section.send input[type=file]:valid + .file-dummy>.success{
+    display: inline-block;
+}
+section.send input[type=file]:valid + .file-dummy>.default{
+     display: none;
+}
+
+section.send .filearea:focus .file-dummy,
+section.send .filearea:hover .file-dummy{
+    background-color: var(--dark-color);
+}
+
+section.send input[type=file] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+section.send label#namearea>a#label{
+    text-align: unset;
+}
+
+section.send label#namearea>input{
+    display: none;
+}
+
+section.send div.slider-hor{
+    margin-top: .5em;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+section.send div.slider-hor input{
+
+    flex: 1;
+}
+section.send div.slider-hor>span{
+    color: var(--accent-color);
+    text-align: center;
+    display: block;
+
+}
+
+section.send .horizontal{
+    display: flex;
+    gap: 30px;
+}
+section.send .horizontal>div{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+section.send .horizontal>*{
+    align-self: end;
+    flex: 1;
+}
+
+section.send .buttons{
+    display: flex;
+    gap: 30px;
+}
+section.send .buttons>*{
+    flex: 1;
+}
+
+section.send label.code input.code{
+    height: 150px;
+    color: var(--accent-color);
+    font-weight: 800;
+    letter-spacing: 25px;
+    font-size: 45px;
+    text-align: center;
+    padding: 0;
+}
+section.send label.code input.code::placeholder{
+    color: var(--light-color-trans);
+}
+@media (max-width: 1100px) {
+    section.send label.code input.code,
+    section.get label.code input.code
+    {
+
+        letter-spacing: 10px;
+        font-size: 35px;
+    }
+}
+@media (max-width: 800px) {
+    section.controls{
+        width: 100%;
+        flex-direction: column;
+        height: fit-content;
+        gap: 30px;
+    }
+    section.controls>*{
+        flex: unset;
+    }
+    section.send label.code input.code,
+    section.get label.code input.code{
+        height: 100px;
+        height: 100px;
+    }
+    section.send .horizontal>div{
+        padding-top: .7em;
+        width: 100%;
+    }
+    section.send .horizontal{
+        flex-direction: column;
+    }
+    section.get .form{
+        flex-direction: column;
+    }
+    section.get .form>*{
+        flex: unset;
+        width: 100%;
+    }
+    section.send .buttons>*{
+        height: 40px;
+        width: 100%;
+        flex: unset;
+    }
+    section.send .buttons{
+        flex-direction: column;
+        gap: 16px;
+    }
+    section.get .form button{
+        height: 48px;
+    }
 }
 
 

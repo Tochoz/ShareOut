@@ -41,7 +41,7 @@ section.content-table td.name{
     width: 15%;
     text-align: start;
     height: fit-content;
-    max-height: 2.2em;
+    max-height: 2.3em;
     text-overflow: clip;
     word-wrap: break-word;
     word-break: break-all;

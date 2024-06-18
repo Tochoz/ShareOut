@@ -11,22 +11,22 @@
 
 <section class="controls">
     <div class="get">
-    <button id="send" class="outlined" onclick="controlSwitch('send')">Отправить</button>
+    <button id="sendbtn" class="outlined" onclick="controlSwitch('send')">Отправить</button>
         <div class="what">
             <button id="textbtn" class="outlined" onclick="controlSwitch('text')">Текст</button>
             <button id="filebtn" class="outlined" onclick="controlSwitch('file')">Файл</button>
         </div>
     </div>
-    <button id="get" class="outlined" onclick="controlSwitch('get')">Получить</button>
+    <button id="getbtn" class="outlined" onclick="controlSwitch('get')">Получить</button>
 </section>
 
-<section class="get">
+<section class="get" id="getsection">
     <div class="form">
-        <label class="code" for="code">
+        <label class="code" for="codeget">
             <span id="label" >Код получения</span>
-            <input maxlength="6" name="code" class="code" id="code" type="text" placeholder="G35J11">
+            <input oninput="getcodeinput(this)" maxlength="6" name="code" class="code" id="codeget" type="text" placeholder="G35J11">
         </label>
-        <button class="filled">Получить по коду</button>
+        <button id="getsubmitbtn" class="filled" onclick="getContent()" disabled>Получить по коду</button>
     </div>
     <label id="textout" for="text">
         <span id="label" >Полученный текст</span>
@@ -43,5 +43,71 @@
     </label>
         <button class="outlined">Скачать</button>
     </div>
+</section>
+
+<section class="send" id="sendsection">
+    <label for="text" id="textin">
+        <span id="label" >Введите сылку или другой текст для передачи</span>
+        <textarea
+                name="text"
+                id="text"
+                required>{{ sendcontent }}</textarea>
+    </label>
+
+    <label class="filearea" for="filesendinput" id="fileinput">
+        <span id="label" >Введите сылку или другой текст для передачи</span>
+        <div class="droparea" id="droparea">
+            <input type="file" id="filesendinput" required="required" />
+            <div class="file-dummy">
+                <div class="success">Файл выбран</div>
+                <div class="default">Выберите файл для отправки или перенесите его</div>
+            </div>
+        </div>
+    </label>
+
+    <label for="name" id="namearea">
+        <a id="label">+ Название для отображения в списке</a>
+        <input name="name"
+               id="name"
+               type="text"
+               aria-describedby="name-error"
+               aria-invalid="false"
+        >
+    </label>
+
+    <section class="horizontal">
+        <div>
+            <label class="time" for="timeslider">
+                <span id="label" >Время действия</span>
+                <div class="slider-hor {% if not user.is_authenticated %}tooltip {% endif %}">
+                    <span id="timedisplay">40<br>сек</span>
+                    <input type="range" min="30" max="120" value="40" step="10" class="slider" oninput="changetime(this)" id="timeslider"
+                           {% if not user.is_authenticated %}
+                               disabled
+                           {% endif %}>
+                    {% if not user.is_authenticated %}
+                        <span class="tooltiptext">Зарегистрируйтесь,<br>чтобы изменять время</span>
+                    {% endif %}
+                </div>
+            </label>
+            <div class="buttons">
+                <button id="sendbtn" class="filled" onclick="sendContent()">Отправить</button>
+                <button id="savebtn" class="outlined {% if not user.is_authenticated %}tooltip {% endif %}" onclick="saveContent()"
+                    {% if not user.is_authenticated %}
+                        disabled
+                    {% endif %}
+                >Сохранить
+                    {% if not user.is_authenticated %}
+                        <span class="tooltiptext">Зарегистрируйтесь, чтобы cохранять <br> недавние ссылки и файлы</span>
+                    {% endif %}
+                </button>
+            </div>
+        </div>
+
+        <label class="code" for="codesend">
+            <span id="label" >Сгенери<WBR>рован<WBR>ный код</span>
+            <input readonly="readonly" maxlength="6" name="code" class="code" id="codesend" type="text" placeholder="G35J11">
+        </label>
+    </section>
 </section>
 {% endblock %}

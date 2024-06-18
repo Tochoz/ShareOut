@@ -3,6 +3,7 @@ package ru.plugins
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.pebble.*
+import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.sessions.*
@@ -60,10 +61,42 @@ fun Application.configureComponentsWatch() {
         }
 
         get("/"){
-            call.respond(PebbleContent("deliver.peb",
-                getPayloadFromCall(call)
+            val content = call.request.queryParameters["content"]
+            val id = call.request.queryParameters["id"]
+            if (content != null) {
+                call.respond(
+                    PebbleContent(
+                        "deliver.peb",
+                        getPayloadFromCall(call) + mapOf("sendcontent" to content)
+                    )
+                )
+            }
+            if (id != null) {
+                val link = links.find { it.id == id.toInt() }
+                if (link!=null) {
+                    call.respond(
+                        PebbleContent(
+                            "deliver.peb",
+                            getPayloadFromCall(call) + mapOf("sendcontent" to link.content)
+                        )
+                    )
+                }
+            }
+            call.respond(
+                PebbleContent(
+                    "deliver.peb",
+                    getPayloadFromCall(call)
             ))
         }
+
+        post("/"){
+            val formParameters = call.receiveParameters()
+            val content = formParameters["content"].toString()
+            print(content)
+            if (content!="")
+                call.respondRedirect("/?content=$content")
+        }
+
         get("/profile"){
             val userSession = call.sessions.get<UserSession>()
             if (userSession != null){
