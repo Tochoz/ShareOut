@@ -7,58 +7,6 @@
     --white-color: #ffffff;
     --accent-color: #F6B17A;
     --accent-color-hover: #c5895c;
-
-
-    --h1-desktop{
-        font-family: MyFont;
-        font-size: 55px;
-        font-weight: 700
-    }
-    --h2-desktop{
-        font-family: MyFont;
-        font-size: 40px;
-        font-weight: 600
-    }
-    --h3-desktop{
-        font-family: MyFont;
-        font-size: 24px;
-        font-weight: 600
-    }
-    --h1-mobile{
-        font-family: MyFont;
-        font-size: 30px;
-        font-weight: 700
-    }
-    --h2-mobile{
-        font-family: MyFont;
-        font-size: 25px;
-        font-weight: 600
-    }
-    --h3-mobile{
-        font-family: MyFont;
-        font-size: 22px;
-        font-weight: 600
-    }
-
-    --text-desktop{
-        font-family: Inter, sans-serif;
-        font-size: 18px;
-        letter-spacing: 0.01em;
-    }
-    --text-mobile{
-        font-family: Inter, sans-serif;
-        font-size: 20px;
-        letter-spacing: 0.01em;
-    }
-
-    --logo-desktop{
-        font-family: LogoFont;
-        font-size: 130px;
-    }
-    --logo-mobile{
-        font-family: LogoFont;
-        font-size: 57px;
-    }
 }
 
 @font-face {
@@ -85,17 +33,15 @@ body{
 
     display: flex;
     flex-direction: column;
-}
 
-p{
-    line-height: 1.5em;
-}
-
-body {
     --sb-track-color: #2d3250;
     --sb-thumb-color: rgba(255, 236, 217, 0.2);
     --sb-thumb-color-hover: rgba(255, 236, 217, 1);
     --sb-size: 8px;
+}
+
+p{
+    line-height: 1.5em;
 }
 
 body::-webkit-scrollbar {
@@ -126,13 +72,6 @@ body::-webkit-scrollbar-thumb:hover {
     body {
         scrollbar-color: var(--sb-thumb-color)
         var(--sb-track-color);
-    }
-}
-
-@media (max-width: 500px) {
-    body {
-        font-family: Inter, sans-serif;
-        font-size: 20px;
     }
 }
 a {
@@ -273,11 +212,20 @@ input, textarea{
     box-sizing: border-box;
     outline: none;
 }
+figure{
+    margin: 0;
+}
+input:not(:placeholder-shown):not(:focus):invalid{
+    border-color: rgba(234, 88, 88, 0.7);
+}
+/*input:not(:placeholder-shown):not(:focus):valid{*/
+/*    border-color: rgba(120, 234, 88, 0.6);*/
+/*}*/
 
 input:focus, textarea:focus{
     border-color: var(--accent-color);
-    /*cursor: text;*/
 }
+
 input[type=submit]{
     align-self: center;
     display: block;
@@ -369,7 +317,6 @@ input[type=range]:hover
 {
     accent-color: var(--accent-color);
 }
-
 
 
 form.account-form{
@@ -474,7 +421,12 @@ span.hideonmobile {
     display: inline;
 }
 
-@media (max-width: 500px){
+
+@media (max-width: 500px) {
+    body {
+        font-family: Inter, sans-serif;
+        font-size: 20px;
+    }
     .tooltip .tooltiptext{
         left: 5%;
         max-width: 300px;

@@ -1,0 +1,12 @@
+{% extends "components/base.peb" %}
+{% block content %}
+    <link rel="stylesheet" href="/static/css/form-target.css">
+    <a href="/main" style="margin-left: 0" class="backlink">Назад на главную</a>
+    {% embed "components/page-title.peb" %}
+    {% block pageheader %}
+        Заявка принята
+    {% endblock %}
+    {% endembed %}
+    <p>Ваша заявка успешно обработана. С вами свяжутся по почте которую вы указали для дальнейшего создания аккаунта.</p>
+
+{% endblock %}

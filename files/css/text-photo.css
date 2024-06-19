@@ -10,13 +10,16 @@ section.text-photo .content{
     flex-basis: 50%;
     /*padding-right: 3em;*/
 }
-section.text-photo img{
+section.text-photo figure{
     flex: 1;
     display: block;
     width: 40%;
     height: fit-content;
     object-fit: contain;
     flex-basis: 40%;
+}
+section.text-photo img{
+    width: 100%;
 }
 
 

@@ -20,6 +20,7 @@
         <input name="password"
                id="password"
                type="password"
+               minlength="8"
                aria-describedby="password-error"
                aria-invalid="false"
                required>
@@ -30,8 +31,10 @@
         <input name="passwordrepeat"
                id="passwordrepeat"
                type="password"
+               minlength="8"
                aria-describedby="passwordrepeat-error"
                aria-invalid="false"
+               placeholder=""
                required>
     </label>
     </fieldset>
@@ -42,6 +45,7 @@
                id="orgcode"
                type="orgcode"
                autocomplete="false"
+               placeholder=""
         >
     </label>
     <input type="submit" class="button" value="Зарегистрироваться">

@@ -15,7 +15,8 @@
                    id="email"
                    type="email"
                    aria-describedby="email-error"
-                   aria-invalid="false"
+                   placeholder=""
+                   autocomplete="email"
                    required>
         </label>
         <label for="details">
@@ -23,6 +24,7 @@
             <textarea
                     name="details"
                     id="details"
+                    placeholder=""
                     required></textarea>
         </label>
         </fieldset>

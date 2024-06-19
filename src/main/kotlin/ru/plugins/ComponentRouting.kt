@@ -132,6 +132,12 @@ fun Application.configureComponentsWatch() {
             else
                 call.respondRedirect("/main")
         }
+        post("/api/organisation-contact"){
+            call.respondRedirect("/contact-success")
+        }
+        get("/contact-success"){
+            call.respond(PebbleContent("form-target.peb", getPayloadFromCall(call)))
+        }
 
     }
 }

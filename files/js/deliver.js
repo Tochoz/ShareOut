@@ -153,7 +153,7 @@ function getContent(){
 
 function sendContent(){
 
-    if (text && textin.lastElementChild.innerHTML.length>0){
+    if (text && textin.lastElementChild.value.length>0){
         document.getElementById("codesend").value = 174455
     }
     if (!text && document.getElementById("filesendinput").files.length != 0){

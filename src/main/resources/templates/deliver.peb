@@ -24,7 +24,7 @@
     <div class="form">
         <label class="code" for="codeget">
             <span id="label" >Код получения</span>
-            <input oninput="getcodeinput(this)" maxlength="6" name="code" class="code" id="codeget" type="text" placeholder="G35J11">
+            <input oninput="getcodeinput(this)" minlength="6" maxlength="6" name="code" class="code" id="codeget" type="text" placeholder="G35J11" required>
         </label>
         <button id="getsubmitbtn" class="filled" onclick="getContent()" disabled>Получить по коду</button>
     </div>

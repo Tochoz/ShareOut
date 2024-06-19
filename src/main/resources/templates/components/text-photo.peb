@@ -5,5 +5,7 @@
         <h2>{% block title %}Component title{% endblock %}</h2>
         <p>{% block text %}Component text{% endblock %}</p>
     </section>
-    <img src="{% block imgsrc %}/static/img/placeholder.svg{% endblock %}" alt="{% block imgalt %}Share Out по сравнению с другими{% endblock %}">
+    <figure>
+        <img src="{% block imgsrc %}/static/img/placeholder.svg{% endblock %}" alt="{% block imgalt %}Share Out по сравнению с другими{% endblock %}">
+    </figure>
 </section>
