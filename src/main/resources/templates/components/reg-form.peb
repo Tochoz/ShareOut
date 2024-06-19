@@ -11,6 +11,7 @@
                type="email"
                aria-describedby="email-error"
                aria-invalid="false"
+               placeholder=""
                required>
     </label>
     <fieldset>
@@ -21,6 +22,7 @@
                id="password"
                type="password"
                minlength="8"
+               placeholder=""
                aria-describedby="password-error"
                aria-invalid="false"
                required>
@@ -49,5 +51,5 @@
         >
     </label>
     <input type="submit" class="button" value="Зарегистрироваться">
-    <a href="accounts/login">Уже есть аккаунт?</a>
+    <a href="/accounts/login">Уже есть аккаунт?</a>
 </form>

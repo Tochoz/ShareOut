@@ -67,17 +67,18 @@ data class Favorites(
     var files: List<ru.File>? = null,
 )
 var links = listOf(
-    Link(0, "Ключ от кошелька", "gfdhkjlt4r3h32489hgerh4q379phg3hig4bv89pbt43brh89", 64, "30.10.2003", true),
-    Link(1, "Купон на пиво", "ghahahaha89", 9, "13.05.2003", true),
-    Link(3, "Пароль от телефона", "iamironman2003", 14, "13.05.2003", false),
+    Link(0, "Ключ от кошелька", "983e887a227069e9f37d15f30167fe68e52b5ec2c077c1ae4db6bbc61623f6a9", 64, "30.10.2023", true),
+    Link(1, "Мой личный сайт", "my-personal-site.su", 9, "19.11.2021", true),
+    Link(3, "Пароль от телефона", "iamironman2003", 14, "13.05.2023", false),
 )
+
 var favs: Favorites = Favorites(
     listOf(
-        Link(0, "Ключ от кошелька", "gfdhkjlt4r3h32489hgerh4q379phg3hig4bv89pbt43brh89", 64, "30.10.2003", true),
-        Link(1, "Купон на пиво", "ghahahaha89", 9, "13.05.2003", true),
+        Link(0, "Ключ от кошелька", "983e887a227069e9f37d15f30167fe68e52b5ec2c077c1ae4db6bbc61623f6a9", 64, "30.10.2003", true),
+        Link(1, "Мой личный сайт", "my-personal-site.su", 19, "13.05.2022", true),
     ),
     listOf(
-        File(0, "Резюме", "me.txt", "12 МБ", "30.10.2003", true),
+        File(0, "Резюме", "meiscool.txt", "12 МБ", "19.11.2021", true),
         File(1, "Отчёт типо ЛР1", "Отчёт по типографике P33692.docx", "128 КБ", "04.12.2021", true),
     ),
 )

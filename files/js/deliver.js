@@ -148,7 +148,7 @@ function getcodeinput(o){
 function getContent(){
     textout.style.display = "block";
 
-    textout.lastElementChild.innerHTML = "hfjlkgsbg434bglgbhlrgebhvl43brhl34blrghbgerlhj"
+    textout.lastElementChild.innerHTML = "yandex.ru"
 }
 
 function sendContent(){
