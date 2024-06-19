@@ -9,6 +9,7 @@
         <input name="email"
                id="email"
                type="email"
+               placeholder=""
                aria-describedby="email-error"
                aria-invalid="false"
                required>
@@ -21,6 +22,7 @@
                type="password"
                aria-describedby="password-error"
                aria-invalid="false"
+               placeholder=""
                required>
     </label>
     <input type="submit" class="button" value="Войти">
