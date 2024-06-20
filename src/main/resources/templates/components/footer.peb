@@ -5,13 +5,13 @@
         <h3>Developed by&nbsp;@tochoz</h3>
         <ul class="undecorated links">
             <li>
-            <a href="https://t.me/tochoz" target="_blank" role="button"><img src="/static/icons/tg.svg" alt="Telegram" height="30px" width="30px"></a>
+            <a href="https://t.me/tochoz" target="_blank" role="button"><img src="/static/icons/tg.svg" alt="Telegram" height="30" width="30"></a>
             </li>
             <li>
-            <a href="mailto:sergey.pugach02@gmail.com" target="_blank" role="button"><img src="/static/icons/mail.svg" alt="GMail" height="30px" width="30px"></a>
+            <a href="mailto:sergey.pugach02@gmail.com" target="_blank" role="button"><img src="/static/icons/mail.svg" alt="GMail" height="30" width="30"></a>
             </li>
             <li>
-            <a href="https://github.com/Tochoz" target="_blank" role="button"><img src="/static/icons/github.svg"  height="30px" alt="GitHub" width="30px"></a>
+            <a href="https://github.com/Tochoz" target="_blank" role="button"><img src="/static/icons/github.svg"  height="30" alt="GitHub" width="30"></a>
             </li>
         </ul>
     </div>
