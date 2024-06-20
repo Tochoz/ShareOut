@@ -12,6 +12,7 @@
                placeholder=""
                aria-describedby="email-error"
                aria-invalid="false"
+               value="test@mail.ru"
                required>
     </label>
     <label for="password">
@@ -23,6 +24,7 @@
                aria-describedby="password-error"
                aria-invalid="false"
                placeholder=""
+               value="12345"
                required>
     </label>
     {% if alertmessage != null %}
