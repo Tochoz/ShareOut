@@ -99,7 +99,7 @@ fun Application.configureComponentsWatch() {
             val userSession = call.sessions.get<UserSession>()
             if (userSession != null){
                 call.respond(PebbleContent("profile.peb",
-                    mapOf("user" to userSession, "favorites" to favs)
+                    mapOf("user" to userSession, "favorites" to favs, "location" to "profile")
                 ))
             }
             else

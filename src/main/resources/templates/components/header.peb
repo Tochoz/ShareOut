@@ -15,7 +15,7 @@
             </label>
         </form>
             {% if user.is_authenticated %}
-                <a href="/profile" ><img class="profile" src="/static/icons/profile.svg" alt="Войти в личный кабинет"></a>
+                <a href="/profile" {% if location == "profile" %} class="disabled" {% endif %}><img class="profile" src="/static/icons/profile.svg" alt="Войти в личный кабинет"></a>
             {% else %}
                 <button class="outlined" onclick="location.href='/accounts/login'"{% if location == "login" %} disabled {% endif %}>Вход</button>
             {% endif %}
@@ -40,11 +40,11 @@
                     </li>
                     {% if user.is_authenticated %}
                         <li>
-                            <button class="outlined" onclick="location.href='/profile'" type="button">Личный кабинет</button>
+                            <button class="outlined" onclick="location.href='/profile'" {% if location == "profile" %} disabled {% endif %} type="button">Личный кабинет</button>
                         </li>
                     {% else %}
                         <li>
-                            <button class="outlined" onclick="location.href='/accounts/login'" type="button">Вход</button>
+                            <button class="outlined" onclick="location.href='/accounts/login'" type="button" {% if location == "login" %} disabled {% endif %}>Вход</button>
                         </li>
                     {% endif %}
 

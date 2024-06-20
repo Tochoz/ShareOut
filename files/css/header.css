@@ -67,6 +67,7 @@ header input#content{
     margin: 0 -42px 0 0;
     padding: .3em 46px .3em 1em;
 
+
 }
 header summary{
     cursor: pointer;
@@ -107,6 +108,7 @@ header .content{
     width: 100%;
     background-color: var(--dark-color);
     padding: 0 5% 24px 5%;
+    box-shadow: #1F233C 0 5px 10px;
 }
 header .content>ul{
     margin: 0;
