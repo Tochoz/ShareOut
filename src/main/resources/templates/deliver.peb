@@ -47,7 +47,7 @@
 
 <section class="send" id="sendsection">
     <label for="text" id="textin">
-        <span id="label" >Введите сылку или другой текст для передачи</span>
+        <span id="label" >Введите сcылку или другой текст для передачи</span>
         <textarea
                 name="text"
                 id="text"
@@ -80,8 +80,8 @@
             <label class="time" for="timeslider">
                 <span id="label" >Время действия</span>
                 <div class="slider-hor {% if not user.is_authenticated %}tooltip {% endif %}">
-                    <span id="timedisplay">40<br>сек</span>
-                    <input type="range" min="30" max="120" value="40" step="10" class="slider" oninput="changetime(this)" id="timeslider"
+                    <span id="timedisplay">2<br>мин</span>
+                    <input type="range" min="60" max="300" value="120" step="30" class="slider" oninput="changetime(this)" id="timeslider"
                            {% if not user.is_authenticated %}
                                disabled
                            {% endif %}>

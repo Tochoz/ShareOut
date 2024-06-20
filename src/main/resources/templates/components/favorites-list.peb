@@ -2,7 +2,7 @@
 {% block custom_styles %}{% endblock %}
 <section class="favorites-list">
     <h2>Список избранного</h2>
-    <p>Здесь появятся отмеченные вами ссылки и файлы. Нажмите на элемент чтобы перейти к отправке</p>
+    <p>Здесь появятся отмеченные вами ссылки и&nbsp;файлы. Нажмите на&nbsp;элемент, чтобы&nbsp;перейти к&nbsp;отправке.</p>
     <section class="horizontal">
         {% if favorites.links!=null %}
         <div class="links">

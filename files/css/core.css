@@ -140,7 +140,7 @@ button.outlined:disabled{
     border-color: grey;
     cursor: default;
 }
-button.outlined:disabled:hover{
+button.outlined:not(.checked):disabled:hover{
     color: grey;
     border-color: grey;
 }

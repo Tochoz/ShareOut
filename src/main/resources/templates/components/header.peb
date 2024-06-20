@@ -5,7 +5,7 @@
         <a href="/main" ><img class="logo" src="/static/icons/logo.svg" alt="Вернуться на главную"></a>
         <div class="desktop">
         <form  class="header" action="/" method="post">
-            <input type="text" id="content" name="content" placeholder="Введите ваш текст">
+            <input type="text" id="content" name="content" placeholder="Текст для передачи">
             <label class="submit">
                 <input type="submit" name="image">
                 <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +28,7 @@
                 <ul class="undecorated">
                     <li>
                         <form  class="header" action="/" method="post">
-                            <input type="text" id="content" name="content" placeholder="Введите код или текст">
+                            <input type="text" id="content" name="content" placeholder="Текст для передачи">
                             <label class="submit">
                                 <input type="submit" name="image">
                                 <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">

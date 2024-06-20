@@ -47,6 +47,16 @@ section.send button.checked:focus{
     background-color: var(--accent-color-hover);
 }
 
+
+section.controls button.outlined.checked:disabled{
+    background-color: grey;
+    border-color: grey;
+}
+
+section.controls button.outlined:not(.checked):disabled{
+    border-color: grey;
+    color: grey;
+}
 /*section.controls{*/
 /*    height: 40px;*/
 /*}*/

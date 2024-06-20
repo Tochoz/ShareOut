@@ -85,7 +85,7 @@ function saveContent(){
 }
 
 function changetime(o) {
-    timedisplay.innerHTML = o.value+"<br>сек";
+    timedisplay.innerHTML = o.value/60+"<br>мин";
 }
 
 function controlSwitch(cmd){
@@ -121,6 +121,13 @@ function controlSwitch(cmd){
                 sendsection.style.display = "flex"
                 getsection.style.display = "none"
 
+                document.getElementById("textbtn").disabled = ""
+                document.getElementById("filebtn").disabled = ""
+
+                textout.style.display = "none";
+                document.getElementById("codeget").value=""
+
+
             }
             break
         case "get":
@@ -128,6 +135,9 @@ function controlSwitch(cmd){
 
                 document.getElementById("sendbtn").classList.remove("checked")
                 document.getElementById("getbtn").classList.add("checked")
+
+                document.getElementById("textbtn").disabled = "true"
+                document.getElementById("filebtn").disabled = "true"
 
                 getsection.style.display = "flex"
                 sendsection.style.display = "none"
@@ -141,8 +151,10 @@ function controlSwitch(cmd){
 function getcodeinput(o){
     if (o.value.length == 6){
         getsubmitbtn.disabled = false
+
     } else {
         getsubmitbtn.disabled = true
+        textout.style.display = "none";
     }
 }
 function getContent(){

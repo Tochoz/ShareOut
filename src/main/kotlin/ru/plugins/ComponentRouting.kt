@@ -9,6 +9,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.sessions.*
 import io.pebbletemplates.pebble.loader.ClasspathLoader
 import ru.UserSession
+import ru.faq
 import ru.favs
 import ru.links
 
@@ -53,10 +54,7 @@ fun Application.configureComponentsWatch() {
         }
         get("/main"){
             call.respond(PebbleContent("main.peb",
-                mapOf("items" to listOf(
-                    mapOf("title" to "Какой максимальный размер файла я могу передать?", "description" to "С учётом сложившейся международной обстановки, внедрение современных методик, в своём классическом представлении, допускает внедрение форм воздействия. Следует отметить, что глубокий уровень погружения способствует подготовке и реализации поэтапного и последовательного развития общества."),
-                    mapOf("title" to "Какой максимальный размер файла я могу передать? Сообщениe в несколько строк", "description" to "С учётом сложившейся международной обстановки, внедрение современных методик, в своём классическом представлении, допускает внедрение форм воздействия"),
-                ))+getPayloadFromCall(call)
+                mapOf("items" to faq) + getPayloadFromCall(call)
             ))
         }
 

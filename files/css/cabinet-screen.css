@@ -32,7 +32,8 @@ section.cabinet-screen section.quote .fill{
 section.cabinet-screen .horizontal-links{
     display: flex;
     gap: 30px;
-    margin-bottom: 56px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 section.cabinet-screen a{
     display: block;

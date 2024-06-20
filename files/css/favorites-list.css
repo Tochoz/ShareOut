@@ -1,11 +1,14 @@
 section.favorites-list h3, section.favorites-list p{
     margin: 0;
 }
+section.favorites-list h2{
+    margin-bottom: 24px;
+}
 section.favorites-list{
     margin-bottom: 140px;
 }
 section.favorites-list .horizontal{
-    margin-top: 32px;
+    margin-top: 16px;
     display: flex;
     gap: 30px;
 }
