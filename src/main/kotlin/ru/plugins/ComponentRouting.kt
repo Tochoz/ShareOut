@@ -51,7 +51,7 @@ fun Application.configureComponentsWatch() {
         }
         get("/main"){
             call.respond(PebbleContent("main.peb",
-                mapOf("items" to faq) + getPayloadFromCall(call)
+                mapOf("items" to faq, "location" to "main") + getPayloadFromCall(call)
             ))
         }
 
@@ -63,7 +63,7 @@ fun Application.configureComponentsWatch() {
                 call.respond(
                     PebbleContent(
                         "deliver.peb",
-                        getPayloadFromCall(call) + mapOf("sendcontent" to content)
+                        getPayloadFromCall(call) + mapOf("sendcontent" to content, "location" to "deliver")
                     )
                 )
             }

@@ -84,6 +84,9 @@ a:hover {
 
     color: var(--accent-color-hover);
 }
+a.disabled {
+    pointer-events: none;
+}
 
 a.backlink{
     display: block;
@@ -92,7 +95,7 @@ a.backlink{
     padding-left: 20px;
     background-image: url("/static/icons/backarrow.svg");
     background-repeat: no-repeat;
-    background-size: 18px 18px;
+    background-size: auto 18px ;
 }
 
 button.outlined{

@@ -24,7 +24,7 @@ fun Application.configureAccounts() {
         get("/accounts/login"){
             call.respond(
                 PebbleContent("login.peb",
-                getPayloadFromCall(call)
+                getPayloadFromCall(call) + mapOf("location" to "login")
             ))
         }
 

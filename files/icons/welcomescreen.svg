@@ -1,13 +1,13 @@
-<svg width="434" height="400" viewBox="0 0 434 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_315_1019)">
-<circle cx="433.787" cy="399.674" r="335.168" transform="rotate(90 433.787 399.674)" stroke="#F6B17A" stroke-width="10"/>
-<circle cx="433.786" cy="399.674" r="236.207" transform="rotate(90 433.786 399.674)" stroke="#F6B17A" stroke-width="10"/>
-<circle cx="433.786" cy="399.674" r="87.3348" transform="rotate(90 433.786 399.674)" stroke="#F6B17A" stroke-width="10"/>
-<circle cx="433.786" cy="399.674" r="152.235" transform="rotate(90 433.786 399.674)" stroke="#F6B17A" stroke-width="10"/>
-</g>
-<defs>
-<clipPath id="clip0_315_1019">
-<rect width="399" height="433" fill="white" transform="translate(433.787 0.673828) rotate(90)"/>
-</clipPath>
-</defs>
+<svg width="434" height="400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#a)" stroke="#F6B17A" stroke-width="10">
+    <circle cx="433.787" cy="399.674" r="335.168" transform="rotate(90 433.787 399.674)"/>
+    <circle cx="433.786" cy="399.674" r="236.207" transform="rotate(90 433.786 399.674)"/>
+    <circle cx="433.786" cy="399.674" r="87.335" transform="rotate(90 433.786 399.674)"/>
+    <circle cx="433.786" cy="399.674" r="152.235" transform="rotate(90 433.786 399.674)"/>
+  </g>
+  <defs>
+    <clipPath id="a">
+      <path fill="#fff" transform="rotate(90 216.557 217.23)" d="M0 0h399v433H0z"/>
+    </clipPath>
+  </defs>
 </svg>

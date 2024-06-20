@@ -2,7 +2,7 @@
 {% block custom_styles %}{% endblock %}
 <header>
     <nav>
-        <a href="/main" ><img class="logo" src="/static/icons/logo.svg" alt="Вернуться на главную"></a>
+        <a href="/main" {% if location == "main" %} class="disabled" {% endif %}><img class="logo" src="/static/icons/logo.svg" alt="Вернуться на главную"></a>
         <div class="desktop">
         <form  class="header" action="/" method="post">
             <input type="text" id="content" name="content" placeholder="Текст для передачи">
@@ -17,7 +17,7 @@
             {% if user.is_authenticated %}
                 <a href="/profile" ><img class="profile" src="/static/icons/profile.svg" alt="Войти в личный кабинет"></a>
             {% else %}
-                <button class="outlined" onclick="location.href='/accounts/login'">Вход</button>
+                <button class="outlined" onclick="location.href='/accounts/login'"{% if location == "login" %} disabled {% endif %}>Вход</button>
             {% endif %}
         </div>
         <details>
