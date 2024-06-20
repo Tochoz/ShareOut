@@ -7,7 +7,7 @@
             <details>
                 <summary>
                         {{ item.title |raw }}
-                    <img src="/static/icons/arrow.svg">
+                    <img src="/static/icons/arrow.svg" alt="Стрелка вниз">
                 </summary>
                 {{ item.description |raw }}
             </details>

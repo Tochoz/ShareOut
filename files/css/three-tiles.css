@@ -50,7 +50,7 @@ section.three-tiles img{
     display: block;
     aspect-ratio: 1/1 auto;
     width: 50%;
-    overflow: visible;
+
     /*border-radius: 50%;*/
     object-fit: fill;
 }
