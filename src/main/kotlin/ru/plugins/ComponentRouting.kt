@@ -8,10 +8,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.sessions.*
 import io.pebbletemplates.pebble.loader.ClasspathLoader
-import ru.UserSession
-import ru.faq
-import ru.favs
-import ru.links
+import ru.*
 
 val components = listOf(
     "header",
@@ -61,6 +58,7 @@ fun Application.configureComponentsWatch() {
         get("/"){
             val content = call.request.queryParameters["content"]
             val id = call.request.queryParameters["id"]
+            print("$content")
             if (content != null) {
                 call.respond(
                     PebbleContent(
@@ -90,9 +88,9 @@ fun Application.configureComponentsWatch() {
         post("/"){
             val formParameters = call.receiveParameters()
             val content = formParameters["content"].toString()
-            print(content)
+
             if (content!="")
-                call.respondRedirect("/?content=$content")
+                call.respondRedirect("/?content="+ content.encodeURLParameter())
             else
                 call.respondRedirect("/")
         }
@@ -123,7 +121,7 @@ fun Application.configureComponentsWatch() {
             if (userSession != null){
                 call.respond(PebbleContent("files.peb",
                     mapOf("user" to userSession).plus(
-                        mapOf("files" to links)
+                        mapOf("files" to files)
                     )
                 ))
             }

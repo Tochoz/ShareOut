@@ -36,6 +36,16 @@ section.content-table td{
 section.content-table td.name{
     flex: 1 1 24.8%;
 }
+
+button.star svg path{
+    stroke: var(--white-color);
+}
+
+button.star.yellowstar svg path{
+    stroke: #ffe463;
+    /*fill: #ffe463;*/
+}
+
 section.content-table td.content,
 section.content-table td.name{
     width: 15%;
@@ -65,12 +75,14 @@ section.content-table td.icons{
     margin-left: auto;
 }
 
-section.content-table td.icons img{
+section.content-table td.icons img,
+section.content-table td.icons svg{
     height: 80%;
     cursor: pointer;
 }
 
-section.content-table td.icons img:hover{
+section.content-table td.icons img:hover,
+section.content-table td.icons svg:hover{
     color: var(--light-color);
 }
 

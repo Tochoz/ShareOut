@@ -6,10 +6,10 @@
         {% for item in items %}
             <details>
                 <summary>
-                        {{ item.title }}
+                        {{ item.title |raw }}
                     <img src="/static/icons/arrow.svg">
                 </summary>
-                {{ item.description }}
+                {{ item.description |raw }}
             </details>
         {% endfor %}
     </div>

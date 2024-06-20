@@ -55,7 +55,6 @@
     </label>
 
     <label class="filearea" for="filesendinput" id="fileinput">
-        <span id="label" >Введите сылку или другой текст для передачи</span>
         <div class="droparea" id="droparea">
             <input type="file" id="filesendinput" required="required" />
             <div class="file-dummy">
@@ -78,7 +77,7 @@
     <section class="horizontal">
         <div>
             <label class="time" for="timeslider">
-                <span id="label" >Время действия</span>
+                <span id="label" >Время действия кода</span>
                 <div class="slider-hor {% if not user.is_authenticated %}tooltip {% endif %}">
                     <span id="timedisplay">2<br>мин</span>
                     <input type="range" min="60" max="300" value="120" step="30" class="slider" oninput="changetime(this)" id="timeslider"

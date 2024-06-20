@@ -15,7 +15,7 @@
                required>
     </label>
     <label for="password">
-        <span id="label">Пароль<a href="/accounts/reset-password">Забыли<span class="hideonmobile"> пароль</span>?</a></span>
+        <span id="label">Пароль<a href="/accounts/password-reset">Забыли<span class="hideonmobile"> пароль</span>?</a></span>
         <span id="password-error"></span>
         <input name="password"
                id="password"
@@ -25,6 +25,9 @@
                placeholder=""
                required>
     </label>
+    {% if alertmessage != null %}
+        <p style="font-weight: 800;">{{ alertmessage }}</p>
+    {% endif %}
     <input type="submit" class="button" value="Войти">
     <a href="/accounts/reg">Создать новый аккаунт</a>
     </form>

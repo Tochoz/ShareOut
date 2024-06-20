@@ -65,7 +65,9 @@ section.cabinet-screen button.filled{
         flex-direction: column;
         gap: 0.7em;
     }
-    section.cabinet-screen section.quote,
+    section.cabinet-screen section.quote{
+        width: 100%;
+    }
     section.cabinet-screen button.filled{
         width: 110%;
         margin-left: -5%;

@@ -1,5 +1,6 @@
 package ru.plugins
 
+import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.pebble.*
 import io.ktor.server.request.*
@@ -67,14 +68,33 @@ fun Application.configureAccounts() {
             call.respondRedirect("/main");
         }
 
-        get("/accounts/password-reset"){
+        get("/accounts/newpassword"){
+
             call.respond(
-                PebbleContent("password-reset.peb",
-                    getPayloadFromCall(call)
+                PebbleContent("newpassword.peb",
+                        getPayloadFromCall(call)
                 ))
         }
+        post("/accounts/newpassword"){
+            call.respondRedirect("/accounts/login")
+        }
+
+        get("/accounts/password-reset"){
+            val msg = call.request.queryParameters["msg"]
+            if (msg!=null)
+                call.respond(
+                    PebbleContent("password-reset.peb",
+                        getPayloadFromCall(call) + mapOf("alertmessage" to msg)
+                    ))
+            else
+                call.respond(
+                    PebbleContent("password-reset.peb",
+                        getPayloadFromCall(call)
+                    ))
+
+        }
         post("/accounts/password-reset"){
-            call.respondRedirect("/profile")
+            call.respondRedirect("/accounts/password-reset?msg="+"Если данный почтовый адрес зарегистрирован, на него было отправлено письмо с информацией о дальнейших действиях.".encodeURLPath())
         }
     }
 }

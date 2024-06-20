@@ -3,7 +3,7 @@
 <section class="contact-form">
     <h2>{% block title %}Вы организация?{% endblock %}</h2>
     <p>
-        Укажите данные для связи и опишите свою оганизацию, после проверки с вами свяжутся для дальнейшего создания аккаунта.
+        Укажите дан&shy;ные для связи и&nbsp;опишите свою огани&shy;зацию, после про&shy;верки с&nbsp;вами свя&shy;жутся для дальне&shy;йшего созда&shy;ния акка&shy;унта.
     </p>
     <form action="/api/organisation-contact" method="post">
     <div class="horizontal">

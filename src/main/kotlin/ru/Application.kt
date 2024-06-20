@@ -1,9 +1,14 @@
 package ru
 
+import io.ktor.http.*
 import io.ktor.server.application.*
+import io.ktor.server.http.content.*
 import io.ktor.server.sessions.*
 import ru.plugins.*
 import java.io.File
+import io.ktor.server.plugins.cachingheaders.*
+import io.ktor.server.plugins.compression.*
+import io.ktor.server.routing.*
 
 data class UserSession(
     val id: Int,
@@ -72,6 +77,12 @@ var links = listOf(
     Link(3, "Пароль от телефона", "iamironman2003", 14, "13.05.2023", false),
 )
 
+var files = listOf(
+    File(5, "Резюме", "meiscool.txt", "12 МБ", "19.11.2021", true),
+    File(1, "Отчёт типо ЛР1", "Отчёт по типографике P33692.docx", "952 КБ", "04.12.2021", true),
+    File(4, "Конфиг сервера", "setup.sh", "13 КБ", "13.05.2023", false),
+)
+
 var favs: Favorites = Favorites(
     listOf(
         Link(0, "Ключ от кошелька", "983e887a227069e9f37d15f30167fe68e52b5ec2c077c1ae4db6bbc61623f6a9", 64, "30.10.2003", true),
@@ -84,14 +95,14 @@ var favs: Favorites = Favorites(
 )
 
 val faq = listOf(
-    mapOf("title" to "Какой максимальный размер файла я могу передать?",
-    "description" to "Индивидуальный размер файла не может превышать 10 МБ, в общей сложности у зарегистрированного пользователя есть возможность хранить до 100 МБ информации включая ссылки. Количество использованной памяти указано в личном кабинете."),
+    mapOf("title" to "Какой макси&shy;мальный размер файла я могу пере&shy;дать?",
+    "description" to "Индиви&shy;дуаль&shy;ный размер файла не может превы&shy;шать 10 МБ, в общей слож&shy;ности у заре&shy;гистри&shy;рован&shy;ного пользо&shy;вателя есть возмож&shy;ность хранить до 100 МБ инфор&shy;мации включая ссылки. Коли&shy;чество исполь&shy;зован&shy;ной памяти указано в личном кабинете."),
     mapOf("title" to "Как долго действует код для получения?",
-        "description" to "Для незарегистрированных пользователей время действия кода 2 минуты. Зарегистрированные пользователи могут увеличить это время до 5 минут."),
-    mapOf("title" to "Какая максимальная длина передаваемого текста?",
-        "description" to "Максимальная длиа передаваемого текста 2000 символов."),
-    mapOf("title" to "Какое количество ссылок/файлов сохраняется в недавних?",
-        "description" to "В списке недавних сохраняются все ссылки и файлы. В случае если выделенные вам 100 МБ закончатся, система будет очищать ссылки и файлы начиная с самых старых."),
+        "description" to "Для незаре&shy;гистри&shy;рован&shy;ных поль&shy;зова&shy;телей время действия кода 2 минуты. Заре&shy;гист&shy;рирован&shy;ные поль&shy;зова&shy;тели могут увели&shy;чить это время до 5 минут."),
+    mapOf("title" to "Какая макси&shy;мальная длина переда&shy;вае&shy;мого текста?",
+        "description" to "Макси&shy;мальная длина переда&shy;вае&shy;мого текста 2000 символов."),
+    mapOf("title" to "Какое коли&shy;чество ссылок и файлов сохра&shy;няется в недав&shy;них?",
+        "description" to "В списке недавних сохра&shy;няются все ссылки и файлы. В случае если выде&shy;лен&shy;ные вам 100 МБ закон&shy;чатся, система будет очищать ссылки и файлы начиная с самых старых."),
 )
 
 val users = mutableListOf(User("test@mail.ru","12345", 13, 13))
@@ -101,11 +112,29 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    install(Compression){
+        gzip()
+        deflate()
+    }
+    install(CachingHeaders)
+
     install(Sessions){
         cookie<UserSession>("user_session", directorySessionStorage(File("build/.sessions")))
     }
     configureTemplating()
+
     configureRouting()
     configureAccounts()
     configureComponentsWatch()
+    routing {
+//        install(CachingHeaders) {
+//            options { call, content ->
+//                when (content.contentType?.withoutParameters()) {
+//                    ContentType.Text.Plain -> CachingOptions(CacheControl.MaxAge(maxAgeSeconds = 3600))
+//                    ContentType.Text.Html -> CachingOptions(CacheControl.MaxAge(maxAgeSeconds = 60))
+//                    else -> null
+//                }
+//            }
+//        }
+    }
 }

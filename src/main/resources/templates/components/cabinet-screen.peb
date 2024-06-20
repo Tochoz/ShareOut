@@ -5,7 +5,7 @@
         <h1>Личный кабинет</h1>
 
         <div id="desktop" class="buttons">
-            <button class="outlined" onclick="location.href='/accounts/password-reset'">Сменить пароль</button>
+            <button class="outlined" onclick="location.href='/accounts/newpassword'">Сменить пароль</button>
             <button class="outlined" onclick="location.href='/accounts/logout'">Выйти</button>
         </div>
     </div>

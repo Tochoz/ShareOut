@@ -6,12 +6,14 @@
             <tr id="{{ link.id }}">
                 <td class="name">{{ link.name }}</td>
                 <td class="content">{{ link.content}}</td>
-                <td class="size">{{ link.size }}</td>
+                <td class="size">{{ link.size }}<br>симв.</td>
                 <td class="date">{{ link.date }}</td>
                 <td class="icons">
-                    <button onclick="addtofavourites({{ link.id }})"><img src="/static/icons/tablestar.svg" alt="Добавить в избранное"></button>
-                    <button onclick="copytext({{ link.id }})"><img src="/static/icons/copy.svg" alt="Скопировать текст"></button>
-                    <button onclick="deletetext({{ link.id }})"><img src="/static/icons/trash.svg" alt="Удалить текст из памяти"></button>
+                    <button class="star {% if link.favourite %}yellowstar{% endif %}" onclick="addtofavourites({{ link.id }})"><svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <title>Добавить или убрать из избранного</title>
+                        <path d="M10.159 2.383c.256-.768.384-1.153.573-1.26a.533.533 0 0 1 .525 0c.19.107.317.492.573 1.26l1.692 5.08c.073.219.11.328.175.41a.554.554 0 0 0 .216.163c.094.04.205.042.427.047l5.153.11c.78.016 1.17.024 1.325.18.134.133.195.33.162.52-.039.221-.35.467-.97.958l-4.108 3.25c-.177.14-.265.21-.319.3a.594.594 0 0 0-.082.264c-.007.106.025.217.089.438l1.492 5.148c.226.779.34 1.168.246 1.37a.555.555 0 0 1-.425.323c-.213.03-.533-.203-1.173-.668l-4.23-3.072c-.182-.132-.273-.198-.372-.224a.531.531 0 0 0-.267 0c-.099.026-.19.092-.372.224l-4.23 3.072c-.64.465-.96.697-1.174.668a.555.555 0 0 1-.424-.322c-.093-.203.02-.592.245-1.37L6.4 14.102c.064-.221.096-.332.09-.438a.595.595 0 0 0-.083-.264c-.054-.09-.143-.16-.32-.3L1.98 9.85c-.62-.491-.931-.737-.97-.958a.593.593 0 0 1 .162-.52c.156-.156.545-.164 1.325-.18l5.153-.11c.222-.005.333-.007.427-.047a.555.555 0 0 0 .216-.163c.065-.082.102-.191.175-.41l1.692-5.08Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                    <button onclick="copytext({{ link.id }})"><img src="/static/icons/copy.svg" alt="Скопировать текст" title="Скопировать текст"></button>
+                    <button onclick="deletetext({{ link.id }})"><img src="/static/icons/trash.svg" alt="Удалить текст из памяти" title="Удалить текст из памяти"></button>
                 </td>
             </tr>
         {% endfor %}

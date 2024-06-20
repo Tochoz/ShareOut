@@ -29,7 +29,7 @@ section.text-photo img{
         flex-direction: column;
         gap: 16px;
     }
-    section.text-photo img{
+    section.text-photo figure{
         width: 100%;
     }
 }

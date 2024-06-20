@@ -155,7 +155,7 @@ h1{
     font-size: 55px;
     font-weight: 700;
     color: var(--light-color);
-
+    letter-spacing: normal;
     margin-top: 0;
 }
 
@@ -164,6 +164,7 @@ h2{
     font-size: 40px;
     font-weight: 600;
     color: var(--light-color);
+    letter-spacing: normal;
 
     margin-top: 0;
     margin-bottom: 40px;
@@ -173,6 +174,7 @@ h3{
     font-family: MyFont;
     font-size: 24px;
     font-weight: 600;
+    letter-spacing: normal;
 
     margin-top: 0;
     margin-bottom: 24px;

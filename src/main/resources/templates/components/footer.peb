@@ -2,7 +2,7 @@
 {% block custom_styles %}{% endblock %}
 <footer>
     <div class="content">
-        <h3>Developed by @tochoz</h3>
+        <h3>Developed by&nbsp;@tochoz</h3>
         <ul class="undecorated links">
             <li>
             <a href="https://t.me/tochoz" target="_blank" role="button"><img src="/static/icons/tg.svg" alt="Telegram" height="30px" width="30px"></a>
