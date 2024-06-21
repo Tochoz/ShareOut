@@ -28,7 +28,7 @@
                required>
     </label>
     {% if alertmessage != null %}
-        <p style="font-weight: 800;">{{ alertmessage }}</p>
+        <p style="font-weight: 700; font-style: italic; margin: .4em 0">{{ alertmessage }}</p>
     {% endif %}
     <input type="submit" class="button" value="Войти">
     <a href="/accounts/reg">Создать новый аккаунт</a>

@@ -237,7 +237,6 @@ section.send label.code input.code{
     padding: 0;
 }
 section.send input.code{
-    user-select: all;
 }
 
 input.code:valid{

@@ -50,6 +50,9 @@
                placeholder=""
         >
     </label>
+    {% if alertmessage != null %}
+        <p style="font-weight: 700; font-style: italic; margin: .4em 0">{{ alertmessage }}</p>
+    {% endif %}
     <input type="submit" class="button" value="Зарегистрироваться">
     <a href="/accounts/login">Уже есть аккаунт?</a>
 </form>

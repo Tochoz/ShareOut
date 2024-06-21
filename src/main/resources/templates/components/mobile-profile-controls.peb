@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/static/css/mobile-profile-controls.css">
 {% block custom_styles %}{% endblock %}
 <section class="mobile-profile-controls">
-        <button class="outlined" onclick="location.href='/accounts/password-reset'">Сменить пароль</button>
+        <button class="outlined" onclick="location.href='/accounts/newpassword'">Сменить пароль</button>
         <button class="outlined" onclick="location.href='/accounts/logout'">Выйти</button>
 </section>

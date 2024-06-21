@@ -22,10 +22,17 @@ fun getPayloadFromCall(call: ApplicationCall) : Map<String, Any>{
 fun Application.configureAccounts() {
     routing {
         get("/accounts/login"){
-            call.respond(
-                PebbleContent("login.peb",
-                getPayloadFromCall(call) + mapOf("location" to "login")
-            ))
+            val msg = call.request.queryParameters["msg"]
+            if (msg != null)
+                call.respond(
+                    PebbleContent("login.peb",
+                    getPayloadFromCall(call) + mapOf("location" to "login") + mapOf("alertmessage" to msg)
+                ))
+            else
+                call.respond(
+                    PebbleContent("login.peb",
+                        getPayloadFromCall(call) + mapOf("location" to "login")
+                    ))
         }
 
         post("/accounts/login"){
@@ -33,18 +40,31 @@ fun Application.configureAccounts() {
             val username = formParameters["email"].toString().trim()
             val password = formParameters["password"].toString().trim()
 
-            var user = users.find { it.email == username && it.password == password}
-            if (user != null){
+            var user = users.find { it.email == username }
+            if (user == null)
+                call.respondRedirect("/accounts/login?msg=" + "Аккаунта с такой почтой не существует.".encodeURLPath())
+            else if (user.password != password)
+                call.respondRedirect("/accounts/login?msg=" + "Неверный пароль от аккаунта.".encodeURLPath())
+            else if (user != null){
                 call.sessions.set(user.toSession())
+                call.respondRedirect("/profile")
             }
-            call.respondRedirect("/profile")
+
         }
 
         get("/accounts/reg"){
-            call.respond(
-                PebbleContent("registration.peb",
-                    getPayloadFromCall(call)
-            ))
+            val msg = call.request.queryParameters["msg"]
+            if (msg != null)
+                call.respond(
+                    PebbleContent("registration.peb",
+                        getPayloadFromCall(call) + mapOf("alertmessage" to msg)
+                ))
+            else
+                call.respond(
+                    PebbleContent("registration.peb",
+                        getPayloadFromCall(call)
+                    ))
+
         }
 
         post("/accounts/reg"){
@@ -53,14 +73,17 @@ fun Application.configureAccounts() {
             val password = formParameters["password"].toString().trim()
             val passwordrepeat = formParameters["passwordrepeat"].toString().trim()
             var found = users.find { it.email == username }
-            if (password == passwordrepeat && found == null) {
+            if (found != null)
+                call.respondRedirect("/accounts/reg?msg=" + "Аккаунт с такой почтой уже существует.".encodeURLPath())
+            else if (password != passwordrepeat)
+                call.respondRedirect("/accounts/reg?msg=" + "Пароли не совпадают.".encodeURLPath())
+            else{
                 var user = User(username, password, 0, 0)
                 users.add(user)
                 call.sessions.set(user.toSession())
                 call.respondRedirect("/profile")
 
             }
-            call.respondRedirect("/accounts/reg")
         }
 
         get("/accounts/logout"){
